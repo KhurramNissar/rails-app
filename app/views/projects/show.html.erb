@@ -1,0 +1,51 @@
+
+
+<div class="d-flex p-2 bd-highlight justify-content-center">
+<p style="color: green"><%= notice %></p>
+
+<%= render @project %>
+
+
+</div>
+<div class="d-flex p-2 bd-highlight justify-content-center mx-5">
+<div>
+  <%= link_to "Edit this project", edit_project_path(@project) %> |
+  <%= link_to "Back to projects", projects_path %>
+</div>
+ <%= button_to "Destroy this project", @project, method: :delete %>
+ </div>
+<%# new task view %>
+<hr>
+
+<h1 class="mr-5">New task</h1>
+<%= render 'tasks/form' %>
+<hr>
+<%# index task view  %>
+<h1>Listing tasks</h1>
+
+<table >
+  <tr >
+    <th>Name</th>
+    <th>Description</th>
+    <th>Status</th>
+    <th>Project</th>
+   
+  </tr>
+<% @project.tasks.each do |task| %>
+ <% if task.persisted?%>
+  <tr> 
+    <td><%= task.name %></td>
+    <td><%= task.description %></td>
+    <td><%= task.status %></td>
+    <td><%= task.project %></td>
+    <td><%= link_to 'Show', [task.project, task] %></td>
+    <td><%= link_to 'Edit', edit_project_task_path(task.project, task) %></td>
+    <td><%= button_to 'Destroy', project_task_path(project_id: task.project,id: task), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+ <% end %>
+<% end %> 
+</table>
+
+<br />
+<hr> 
+<%= link_to 'New Task', new_project_task_path(@project.id) %> 

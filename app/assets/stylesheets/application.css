@@ -1,0 +1,39 @@
+
+.custom-nav{
+    background-color: blueviolet;
+}
+
+#logo{
+    float: left;
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: capitalize;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+#logo:hover{
+     color:rgb(208, 208, 223);
+     text-decoration: none;
+}
+.search{
+    display: flex;
+    justify-content: end;
+}
+.jumbo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sign{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.jumbotron{
+    background-color:rgb(247, 192, 203);
+}
+
+
+.cntr{
+    text-align: center;
+}
