@@ -1,4 +1,12 @@
-  <button type="button" class="btn btn-secondary"><%= link_to "New project", new_project_path %>
+
+<%# <div class="jumbotron">
+<h1 class="jumbo">Viral Sequare </h1>
+<div class="sign">
+<%= link_to "Sign up Now ", "#" ,class:"btn btn-primary btn-lg "%>
+<%# </div> %>
+<%# </div>  %>
+
+  <button type="button" class="btn btn-light border"><%= link_to "New project", new_project_path %>
 
    </button>
 
@@ -12,8 +20,11 @@
 
 <div id="projects">
   <% @projects.each do |project| %>
+   
     <%= render project %>
 <%= link_to "Show this project", project %>
+<hr>
+<hr>
 <% end %>
 </div> 
 

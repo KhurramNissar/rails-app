@@ -11,22 +11,47 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, class: "form-label" , style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="abc">
+    <%=  form.label :name, class: "form-label name1 " , style: "display: block" %>
+    <%= form.text_field :name,class: "namelbl border"  %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+  <div class="abc">
+    <%= form.label :description, style: "display: block", class: "name2" %>
+    <%= form.text_area :description,class: "dislbl border" %>
   </div>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+
+
+ <%= select_tag "User id", options_from_collection_for_select(User.all, "id", "email") %>  
+
+<%#= form.select :user_id, User.all.collect {|u| [u.email, u.id] } %>
+
+
+<%
+=begin%>
+ <%= form.collection_check_boxes :user_id, User.order(:email), :id, :email %> 
+<%
+=end%>
+
+
+  <%# <div class= "userflex">
+    <%= form.label :user_id , class:"listofuser" %>
+  
+    <%# <%= form.text_field :user_id, value: current_user.id, class:"userfield border"%> 
+    
+    <%# </div>  
+
+
+<%# <%= form.select :user_id, options_for_select([['User 1', 'user1'], ['User 2', 'user2']]) %> 
+  <div class="submit">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+
+<h1>Manager</h1>
+
+
+
+
 <% end %>

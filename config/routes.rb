@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  get 'users/index'
+  root to: "projects#index"
   resources :projects do
     resources :tasks
   end
   devise_for :users
-  root to: "projects#index"
+  resources :managers
 end

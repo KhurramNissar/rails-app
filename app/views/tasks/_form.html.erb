@@ -11,20 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="abc ">
+    <%= f.label :name ,class:"name1" %><br />
+    <%= f.text_field :name,class:"namelbl" %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
+  <div class="abc">
+    <%= f.label :description , class:"name2" %><br />
+    <%= f.text_area :description ,class:"dislbl" %>
   </div>
-  <div class="field">
+  <div class="def">
     <%= f.label :status %><br />
     <%= f.select :status,Task::STATUS_OPTIONS %>
-  </div>
+  
  
   <div class="actions">
     <%= f.submit %>
+  </div>
   </div>
 <% end %>
