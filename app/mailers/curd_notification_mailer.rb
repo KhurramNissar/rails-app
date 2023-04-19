@@ -9,13 +9,21 @@ class CurdNotificationMailer < ApplicationMailer
 
 
 
-  def update_notification
+  def update_notification(object)
+    @object = object
+    @object_count = object.class.count
+
+        mail to: "admin@example.com" ,subject: "A update entry for #{object.class} has been updated"
   
   end
 
 
 
-  def delete_notification
+  def delete_notification(object)
+    @object = object
+    @object_count = object.class.count
+
+        mail to: "admin@example.com" ,subject: "A delete entry for #{object.class} has been deleted"
   
   end
 end
